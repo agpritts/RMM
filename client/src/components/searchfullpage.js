@@ -43,7 +43,7 @@ const SearchFullPage = (props) => {
                                 }
                             />
                         }
-                        placeholder="Search for professors..."
+                        placeholder="Search for managers..."
                         prefix={<SearchOutlined />}
                         enterButton
                         size="large"

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Typography, Avatar, Button, Space, Skeleton } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 const { Title, Text } = Typography;
-const ProfDetail = (props) => {
+const MngrDetail = (props) => {
     const [res, setRes] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -63,7 +63,7 @@ const ProfDetail = (props) => {
                 >
                     <Skeleton loading={loading} active paragraph={{ rows: 5 }}>
                         <Title level={4}>{res.name}</Title>
-                        {res.designation}
+                        {/* {res.designation}
                         <br />
                         <b>Department: </b>
                         {res.department}
@@ -77,7 +77,7 @@ const ProfDetail = (props) => {
                         <b>Email: </b>
                         <a href={`mailto:${res.email}`}>{res.email}</a>
                         <br />
-                        <br />
+                        <br /> */}
                         <Text type="secondary" style={{ fontSize: "0.8em" }}>
                             {res._id}
                         </Text>
@@ -88,4 +88,4 @@ const ProfDetail = (props) => {
     );
 };
 
-export default ProfDetail;
+export default MngrDetail;

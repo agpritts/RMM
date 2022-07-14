@@ -1,9 +1,9 @@
 import React from "react";
 import BackDrop from "../components/backdrop";
-import ProfDetail from "../components/profdetail";
-import ProfRating from "./profrating";
-import ProfReview from "./profreview";
-const ProfMenu = ({ match, location }) => {
+import MngrDetail from "../components/mngrdetail";
+import MngrRating from "./mngrrating";
+import MngrReview from "./mngrreview";
+const MngrMenu = ({ match, location }) => {
     const id = match.params.id;
     const auth = localStorage.getItem("auth");
     const token = localStorage.getItem("token");
@@ -28,11 +28,11 @@ const ProfMenu = ({ match, location }) => {
     return (
         <React.Fragment>
             <BackDrop />
-            <ProfDetail FID={id} />
-            <ProfRating FID={id} />
-            <ProfReview FID={id} />
+            <MngrDetail FID={id} />
+            <MngrRating FID={id} />
+            <MngrReview FID={id} />
         </React.Fragment>
     );
 };
 
-export default ProfMenu;
+export default MngrMenu;

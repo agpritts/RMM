@@ -12,7 +12,7 @@ import {
 import { ArrowRightOutlined } from "@ant-design/icons";
 
 const { TextArea } = Input;
-const ProfReview = (props) => {
+const MngrReview = (props) => {
     const [res, setRes] = useState([]);
     const [Name, setName] = useState("");
     const [loading, setLoading] = useState(true);
@@ -125,10 +125,10 @@ const ProfReview = (props) => {
                 <React.Fragment>
                     <Divider style={{ margin: "10px 0 10px 0" }} />
                     <center>
-                        We limit the number of certain actions you perform on
+                        We limit the number of certain actions you can perform on
                         this site to prevent <b>spam</b>.<br />
-                        Looks like you have already written something. Currently
-                        we don't allow to edit reviews.
+                        It looks like you've already posted a review here. Review
+                        editing is currently not available
                     </center>
                 </React.Fragment>
             );
@@ -161,7 +161,7 @@ const ProfReview = (props) => {
                             ]}
                         >
                             <TextArea
-                                placeholder="Write something here. Once you post the review, you cannot edit it. "
+                                placeholder="Write something here. Once you post the review, you cannot edit it."
                                 autoSize={{ minRows: 3, maxRows: 10 }}
                             />
                         </Form.Item>
@@ -188,7 +188,7 @@ const ProfReview = (props) => {
         if (res.length === 0) {
             return (
                 <React.Fragment>
-                    <center>No reviews yet. 😿 Write one now.</center>
+                    <center>No reviews yet. 😿 Write one now!</center>
                 </React.Fragment>
             );
         } else {
@@ -261,4 +261,4 @@ const ProfReview = (props) => {
     );
 };
 
-export default ProfReview;
+export default MngrReview;

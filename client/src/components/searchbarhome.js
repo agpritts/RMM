@@ -19,13 +19,13 @@ function SearchBarHome() {
                 message: "Liked it? 😍",
                 description: (
                     <React.Fragment>
-                        Star or contribute to this project on{" "}
+                        Placeholder{" "}
                         <a
-                            href="https://github.com/whoanuragverma/ratemyprof"
+                            href="https://images.unsplash.com/photo-1611267254323-4db7b39c732c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2F0JTIwbG92ZXxlbnwwfHwwfHw%3D&w=1000&q=80"
                             target="_blank"
                             rel="norefferer"
                         >
-                            GitHub.
+                            placeholder.
                         </a>
                     </React.Fragment>
                 ),
@@ -44,7 +44,7 @@ function SearchBarHome() {
             <Row justify="center" align="middle" className="home">
                 <Col xs={24} lg={12}>
                     <Title className="title">
-                        I think my professor is&nbsp;
+                        I think my manager is&nbsp;
                         <ReactTypingEffect
                             text={[
                                 "kinda cool.",
@@ -74,7 +74,7 @@ function SearchBarHome() {
                                 }
                             />
                         }
-                        placeholder="Search for professors..."
+                        placeholder="Search for managers..."
                         prefix={<SearchOutlined />}
                         onClick={() => (window.location.href = "/search")}
                     />

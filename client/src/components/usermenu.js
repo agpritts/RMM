@@ -22,7 +22,7 @@ const UserMenu = () => {
     const [OTPValidateError, setOTPValidateError] = useState();
     const [loading1, setLoading1] = useState(false);
     const [loading2, setLoading2] = useState(false);
-    const [Name, setName] = useState("Smelly Cat");
+    const [Name, setName] = useState("Sleepy Cat");
     const [VCheck, setVCheck] = useState(0);
     const onFinishSignUp = (values) => {
         setLoading1(true);
@@ -47,7 +47,7 @@ const UserMenu = () => {
                         } else if (element.param === "password") {
                             setpasswordValidate("error");
                             setpasswordValidateError(
-                                "Password must be atleast 6 characters long."
+                                "Password must be at least 6 characters long"
                             );
                         }
                     });
@@ -180,7 +180,7 @@ const UserMenu = () => {
                         Hang On!
                     </Title>
                     We hate spam too, this is just an additional step to prevent
-                    spam.
+                    spam
                     <Tabs defaultActiveKey={1} tabBarGutter={30}>
                         <TabPane tab="Login" key={1}>
                             <Form name="login" onFinish={onFinishLogin}>
@@ -303,7 +303,7 @@ const UserMenu = () => {
                 <SearchBarHome />
                 <Modal visible footer={null} closable={false} centered>
                     <Title className="title-small" level={3}>
-                        One last thing..
+                        One last thing...
                     </Title>
                     We need to verify your email before you can continue.
                     <div className="otpbox">
@@ -373,7 +373,7 @@ const UserMenu = () => {
                     onCancel={() => (window.location.href = "/")}
                 >
                     <Title level={3}>Hi, {Name.name}</Title>
-                    You are already loggend in. 😎 🙌
+                    You are already loggend in 🙌
                     <br />
                     <br />
                     <Button
@@ -389,7 +389,7 @@ const UserMenu = () => {
                     <br /> <br />
                     <Text type="secondary">{Name._id}</Text>
                     <br />
-                    <Text strong>Made with ❤ in India</Text>
+                    <Text strong>Made with ❤</Text>
                 </Modal>
             </React.Fragment>
         );

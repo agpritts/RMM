@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Skeleton, Button, Space } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import StarRatingComponent from "react-star-rating-component";
-const ProfRating = (props) => {
+const MngrRating = (props) => {
     const [res, setRes] = useState([]);
     const [loading, setLoading] = useState(true);
     const [butLoading, setbutLoading] = useState(false);
@@ -94,9 +94,9 @@ const ProfRating = (props) => {
         if (!hasPostedRating) {
             return (
                 <React.Fragment>
-                    Looks like you have already rated.
+                    You have already posted your rating
                     <br />
-                    Currently we don't allow to edit rating.{" "}
+                    Editing ratings is currently unavailable{" "}
                     <span role="img">😢</span>
                 </React.Fragment>
             );
@@ -122,7 +122,7 @@ const ProfRating = (props) => {
                             </Button>
                         </Space>
                         <p style={{ fontSize: 12 }}>
-                            Once you post the rating, you cannot edit it.
+                            Ratings cannot currently be edited after posting
                         </p>
                     </div>
                 </React.Fragment>
@@ -168,4 +168,4 @@ const ProfRating = (props) => {
     );
 };
 
-export default ProfRating;
+export default MngrRating;
