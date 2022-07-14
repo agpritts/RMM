@@ -63,21 +63,21 @@ const MngrDetail = (props) => {
                 >
                     <Skeleton loading={loading} active paragraph={{ rows: 5 }}>
                         <Title level={4}>{res.name}</Title>
-                        {/* {res.designation}
+                        {res.company_name}
                         <br />
                         <b>Department: </b>
                         {res.department}
                         <br />
-                        <b>School: </b>
-                        {res.school}
+                        <b>Manager Level: </b>
+                        {res.manager_level}
                         <br />
-                        <b>Cabin: </b>
-                        {res.cabin}
+                        <b>Product/Solution Area: </b>
+                        {res.product_area}
                         <br />
-                        <b>Email: </b>
+                        {/* <b>Email: </b>
                         <a href={`mailto:${res.email}`}>{res.email}</a>
-                        <br />
                         <br /> */}
+                        <br />
                         <Text type="secondary" style={{ fontSize: "0.8em" }}>
                             {res._id}
                         </Text>

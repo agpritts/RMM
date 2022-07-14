@@ -18,7 +18,7 @@
 const express = require("express");
 const router = express.Router();
 let User = require("./models/user");
-let Prof = require("./models/prof");
+let Mngr = require("./models/mngr");
 let otp = require("./models/otp");
 let Reviews = require("./models/reviews");
 let Ratings = require("./models/ratings");
@@ -35,7 +35,7 @@ router.post("/findUser", (req, res) => {
             return res.json({ name: result.name });
         })
         .catch(() => {
-            return res.json({ name: "Smelly Cat" });
+            return res.json({ name: "Sleepy Cat" });
         });
 });
 
@@ -45,7 +45,7 @@ router.post(
         check("email", "Invalid Email").isEmail(),
         check(
             "password",
-            "Password must be atleast 6 characters long."
+            "Password must be at least 6 characters long"
         ).isLength({
             min: 6,
         }),
@@ -72,13 +72,13 @@ router.post(
                     user.save()
                         .then(() => {
                             return res.status(201).json({
-                                message: "SignUp successfull!",
+                                message: "Sign up successful!",
                                 code: 1,
                             });
                         })
                         .catch(() => {
                             return res.status(507).json({
-                                message: "Something went wrong!",
+                                message: "Something went wrong :/",
                             });
                         });
                 }
@@ -115,7 +115,7 @@ router.post(
                 ) {
                     return res.status(403).json({
                         auth: false,
-                        message: "Invalid Password!",
+                        message: "Invalid password",
                         code: 1,
                     });
                 } else {
@@ -158,12 +158,12 @@ router.get("/generateOTP", (req, res) => {
                         });
                         otps.save().then(() => {
                             sendOTP(email, otps.OTP);
-                            return res.json({ message: "OTP Sent!", code: 1 });
+                            return res.json({ message: "OTP sent!", code: 1 });
                         });
                     } else {
                         sendOTP(email, otpRes.OTP);
                         return res.json({
-                            message: "OTP Sent Again!",
+                            message: "OTP re-sent!",
                             code: 2,
                         });
                     }
@@ -174,7 +174,7 @@ router.get("/generateOTP", (req, res) => {
         })
         .catch((err) => {
             return res.status(403).json({
-                message: "Something's not right.",
+                message: "Something's not right :-/",
                 code: 4,
             });
         });
@@ -193,7 +193,7 @@ router.post("/validateOTP", (req, res) => {
                 User.findByIdAndUpdate(decoded._id, { otpVerified: true }).then(
                     () => {
                         return res.json({
-                            message: "Success",
+                            message: "Success!",
                             code: 0,
                             auth: true,
                         });
@@ -209,7 +209,7 @@ router.post("/validateOTP", (req, res) => {
         })
         .catch((err) => {
             return res.status(403).json({
-                message: "Something's not right.",
+                message: "Something's not right :^/",
                 code: 4,
             });
         });
@@ -217,14 +217,14 @@ router.post("/validateOTP", (req, res) => {
 
 router.post("/find/v1", (req, res) => {
     let query = req.body.name + ".*";
-    Prof.find({ name: { $regex: query, $options: "i" } })
+    Mngr.find({ name: { $regex: query, $options: "i" } })
         .limit(10)
         .then((result) => {
             return res.json(result);
         });
 });
 router.post("/find/v2", (req, res) => {
-    Prof.find({ FID: req.body.FID }).then((result) => {
+    Mngr.find({ FID: req.body.FID }).then((result) => {
         return res.json(result);
     });
 });
@@ -246,9 +246,9 @@ router.get("/verify", (req, res) => {
 router.post("/read_review", (req, res) => {
     const FID = req.body.FID;
     if (!FID) {
-        return res.status(200).json({ code: 3, message: "FID not Supplied" });
+        return res.status(200).json({ code: 3, message: "FID not supplied" });
     }
-    Prof.findOne({ FID: FID }).then(() => {
+    Mngr.findOne({ FID: FID }).then(() => {
         Reviews.find({ FID: FID }).then((result) => {
             return res.status(200).json(result);
         });
@@ -258,9 +258,9 @@ router.post("/read_review", (req, res) => {
 router.post("/read_rating", (req, res) => {
     const FID = req.body.FID;
     if (!FID) {
-        return res.status(200).json({ code: 3, message: "FID not Supplied" });
+        return res.status(200).json({ code: 3, message: "FID not supplied" });
     }
-    Prof.findOne({ FID: FID }).then(() => {
+    Mngr.findOne({ FID: FID }).then(() => {
         Ratings.find({ FID: FID }).then((result) => {
             return res.status(200).json(result);
         });
@@ -290,12 +290,12 @@ router.post("/write_review", (req, res) => {
             });
             Review.save()
                 .then(() => {
-                    return res.json({ code: 2, message: "Success" });
+                    return res.json({ code: 2, message: "Success!" });
                 })
                 .catch(() => {
                     return res.json({
                         code: 3,
-                        message: "Something went wrong",
+                        message: "Something went wrong :(",
                     });
                 });
         }
@@ -321,12 +321,12 @@ router.post("/write_rating", (req, res) => {
             });
             Rating.save()
                 .then(() => {
-                    return res.json({ code: 2, message: "Success" });
+                    return res.json({ code: 2, message: "Success!" });
                 })
                 .catch(() => {
                     return res.json({
                         code: 3,
-                        message: "Something went wrong",
+                        message: "Something went wrong :-(",
                     });
                 });
         }

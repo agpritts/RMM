@@ -32,15 +32,15 @@ const transporter = nodemailer.createTransport({
 
 module.exports = function (email, otp) {
     const mailOptions = {
-        from: "RateMyProf Team",
+        from: "RMM",
         to: email,
         generateTextFromHTML: true,
-        subject: "RateMyProf Verification",
+        subject: "RMM Verification",
         html:
-            "Hi,<br><br> Here is your OTP for completing sign up for RateMyProf<h2>" +
+            "Hi,<br><br> Here is your OTP to complete your sign up for RMM<h2>" +
             otp +
             `</h2>This was an additional step to prevent other users from spam.<br>
-            This OTP is valid only for <b>15 minutes</b>.<br><br>Thanks<br>The RateMyProf Team`,
+            This OTP is valid only for <b>15 minutes</b>.<br><br>Thanks<br>RMM`,
     };
 
     transporter.sendMail(mailOptions, (error, response) => {

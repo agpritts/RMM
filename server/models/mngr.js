@@ -1,31 +1,31 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-let Prof = new Schema({
+let Mngr = new Schema({
     FID: {
+        type: String,
+    },
+    company_name: {
         type: String,
     },
     name: {
         type: String,
     },
-    email: {
-        type: String,
-    },
-    designation: {
-        type: String,
-    },
+    // first_name: {
+    //     type: String,
+    // },
+    // last_name: {
+    //     type: String,
+    // },
     department: {
         type: String,
     },
-    school: {
+    manager_level: {
         type: String,
     },
-    cabin: {
-        type: String,
-    },
-    image: {
+    product_area: {
         type: String,
     },
 });
 
-module.exports = mongoose.model("Prof", Prof);
+module.exports = mongoose.model("Mngr", Mngr);
