@@ -15,7 +15,8 @@
         "react-star-rating-component": "^1.4.1",
         "react-typing-effect": "^2.0.3"
     },
-    "proxy":"http://localhost:5000",
+    "proxy":"http://localhost:5001",
+    "secure": false,
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",

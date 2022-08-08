@@ -230,6 +230,7 @@ router.post("/find/v2", (req, res) => {
 });
 
 router.get("/verify", (req, res) => {
+    console.log("ifbdsifghsidhj");
     const token = req.headers["x-access-token"];
     if (!token) {
         return res.status(409).json({ code: 0, message: "Unauthorized" });

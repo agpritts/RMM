@@ -44,19 +44,16 @@ function SearchBarHome() {
             <Row justify="center" align="middle" className="home">
                 <Col xs={24} lg={12}>
                     <Title className="title">
-                        I think my manager is&nbsp;
-                        <ReactTypingEffect
+                        RMM
+                        <ReactTypingEffect className="title-small"
                             text={[
-                                "kinda cool.",
-                                "way too chill.",
-                                "a superhero.",
-                                "a tough grader.",
-                                "ignoring my mails.",
-                                "blacklisted.",
-                                "awesome.",
+                                "Rate Managers",
+                                "Read Reviews",
+                                "Interact Anonymously"
                             ]}
-                            eraseDelay={1500}
-                            speed={100}
+                            eraseDelay={2000}
+                            eraseSpeed={75}
+                            speed={75}
                         />
                     </Title>
                 </Col>
@@ -74,7 +71,7 @@ function SearchBarHome() {
                                 }
                             />
                         }
-                        placeholder="Search for managers..."
+                        placeholder="Search Managers"
                         prefix={<SearchOutlined />}
                         onClick={() => (window.location.href = "/search")}
                     />
