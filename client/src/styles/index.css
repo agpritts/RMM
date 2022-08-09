@@ -29,17 +29,17 @@ body {
     padding: 0 5%;
 }
 .title {
-    color: #7637a9;
+    color: #7e57c2;
     font-family: "Montserrat", sans-serif;
     font-size: 4em !important;
     font-weight: 900 !important;
-    -webkit-text-stroke: 2px #7637a9;
+    -webkit-text-stroke: 2px #7e57c2;
 }
 .title-small {
     font-family: "Montserrat", sans-serif;
     font-size: 0.5em !important;
     font-weight: 700 !important;
-    color: #7637a9;
+    color: #7e57c2;
     -webkit-text-stroke: 0px;
 }
 .otpbox {
