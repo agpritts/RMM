@@ -58,7 +58,7 @@ function SearchBarHome() {
                     </Title>
                 </Col>
                 <Col xs={24} lg={12}>
-                    <Input
+                    <Input 
                         suffix={
                             <Button
                                 type="text"
